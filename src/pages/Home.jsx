@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-// const backendurl = import.meta.env.VITE_BACKEND_URL;
-const backendurl = "http://40.81.224.158:8000";
+const backendurl = import.meta.env.VITE_BACKEND_URL;
 
 const Home = () => {
   const [message, setMessage] = useState("");
@@ -33,7 +32,6 @@ const Home = () => {
   return (
     <div className="container text-center mt-5">
       <h1>{message}</h1>
-      <h1>{backendurl}</h1>
       <div className="mt-4">
         <button className="btn btn-warning m-2" onClick={handleFacultyLogin}>
           Faculty Login
