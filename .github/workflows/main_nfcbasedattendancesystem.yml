@@ -16,13 +16,20 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "20" # Use your Node.js version
+          node-version: "16" # Use your Node.js version
 
       - name: Install dependencies
         run: npm install
 
       - name: Build
         run: npm run build
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
 
       - name: Deploy to Azure Web App
         uses: Azure/webapps-deploy@v2
