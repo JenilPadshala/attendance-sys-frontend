@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const backendurl = import.meta.env.VITE_BACKEND_URL;
+// const backendurl = import.meta.env.VITE_BACKEND_URL;
+const backendurl = "http://40.81.224.158:8000";
 
 const Home = () => {
   const [message, setMessage] = useState("");

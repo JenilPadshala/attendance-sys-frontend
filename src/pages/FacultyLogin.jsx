@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const backendurl = import.meta.env.VITE_BACKEND_URL;
+// const backendurl = import.meta.env.VITE_BACKEND_URL;
+const backendurl = "http://40.81.224.158:8000";
 export default function FacultyLogin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

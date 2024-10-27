@@ -5,7 +5,8 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import AttendanceTable from "../components/AttendanceTable";
-const backendurl = import.meta.env.VITE_BACKEND_URL;
+// const backendurl = import.meta.env.VITE_BACKEND_URL;
+const backendurl = "http://40.81.224.158:8000";
 export default function StudentAttendance() {
   const location = useLocation();
   const { studentData } = location.state || {};

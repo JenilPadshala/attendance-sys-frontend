@@ -6,7 +6,8 @@ import { useState } from "react";
 import Courses from "../components/Courses";
 import FacultyNavbar from "../components/FacultyNavbar";
 
-const backendurl = import.meta.env.VITE_BACKEND_URL;
+// const backendurl = import.meta.env.VITE_BACKEND_URL;
+const backendurl = "http://40.81.224.158:8000";
 export default function FacultyCourses() {
   const [courses, setCourses] = useState([]);
   // Retrieve state passed from the FacultyLogin component
