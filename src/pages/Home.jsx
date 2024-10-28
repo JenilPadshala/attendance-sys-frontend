@@ -32,6 +32,7 @@ const Home = () => {
   return (
     <div className="container text-center mt-5">
       <h1>{message}</h1>
+      <h1>{backendurl}</h1>
       <div className="mt-4">
         <button className="btn btn-warning m-2" onClick={handleFacultyLogin}>
           Faculty Login
