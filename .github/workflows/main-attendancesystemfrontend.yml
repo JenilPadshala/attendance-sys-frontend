@@ -12,9 +12,6 @@ on:
 
 # Optional: environment variables can be injected here
 # You can add these variables in your repository Settings - Secrets and variables - Actions - variables
-env:
-  VITE_ENV_VAR1: ${{ env.VITE_ENV_VAR1 }}
-  VITE_ENV_VAR2: ${{ env.VITE_ENV_VAR2 }}
 
 # There are two jobs in this workflow - build and deploy
 jobs:
@@ -24,22 +21,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js version
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "18.x"
+          node-version: "20"
 
       - name: Install dependencies, build, and test
         run: |
           npm install
           npm run build --if-present
           npm run test --if-present
-        # Other scripts if configured should be added here, such as linting, formating
+      # Other scripts if configured should be added here, such as linting, formating
+      - name: Set environment variable for Vite
+        run: echo "VITE_BACKEND_URL=${{ secrets.VITE_BACKEND_URL }}" > .env.local
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: node-app
           path: dist # This should be your distribution path, not the root path
@@ -54,7 +53,7 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: node-app
 
@@ -62,7 +61,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: { name_of_your_app }
+          app-name: nfcbasedattendancesystem
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }} # Publish profile should always be stored as secrets in your repository Settings - Secrets and variables - Actions - secrets
           package: .
