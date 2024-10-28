@@ -35,7 +35,9 @@ jobs:
           npm run test --if-present
       # Other scripts if configured should be added here, such as linting, formating
       - name: Set environment variable for Vite
-        run: echo "VITE_BACKEND_URL=${{ secrets.VITE_BACKEND_URL }}" > .env.local
+        run: |
+          echo "VITE_BACKEND_URL=${{ secrets.VITE_BACKEND_URL }}" > .env.local
+          ls -a
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
