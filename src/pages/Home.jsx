@@ -14,7 +14,7 @@ const Home = () => {
         setMessage(response.data.message);
       })
       .catch((error) => {
-        setMessage("Error fetching messsage");
+        setMessage("Error fetching message");
         console.error(error);
       });
   }, []);
@@ -32,7 +32,6 @@ const Home = () => {
   return (
     <div className="container text-center mt-5">
       <h1>{message}</h1>
-      <h2>{backendurl}</h2>
       <div className="mt-4">
         <button className="btn btn-warning m-2" onClick={handleFacultyLogin}>
           Faculty Login
