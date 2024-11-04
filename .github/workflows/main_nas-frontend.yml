@@ -54,4 +54,4 @@ jobs:
           app-name: nas-frontend
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-          package: ./dist # Ensure package path points to the correct folder
+          package: .
