@@ -54,7 +54,7 @@ export default function StudentLogin() {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center">Student Login</h1>
+      <h1 className="text-center text-black">Student Login</h1>
 
       <div className="d-flex justify-content-end">
         <button className="btn btn-dark ms-auto" onClick={handleBackButton}>
@@ -68,8 +68,8 @@ export default function StudentLogin() {
             Username
           </label>
           <input
-            type="text"
-            className="form-control"
+            type="text text-black"
+            className="form-control text-orange"
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -83,7 +83,7 @@ export default function StudentLogin() {
           </label>
           <input
             type="password"
-            className="form-control"
+            className="form-control text-green"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
