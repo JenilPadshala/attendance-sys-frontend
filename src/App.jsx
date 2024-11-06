@@ -12,7 +12,7 @@ import './app.css'; // Import the CSS file
 function App() {
   return (
     <Router>
-      <div className="full-page-background">
+      <div  className={location.pathname == '/'? 'full-page-background' : ''}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/faculty/login" element={<FacultyLogin />} />
