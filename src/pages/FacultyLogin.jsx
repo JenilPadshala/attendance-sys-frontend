@@ -56,8 +56,8 @@ export default function FacultyLogin() {
       <h1 id="faculty_login"className="text-center">Faculty Login</h1>
 
       <div className="d-flex justify-content-end">
-        <button className="btn btn-dark ms-auto" onClick={handleBackButton}>
-          Back
+        <button className="btn btn-danger ms-auto btn-lg" onClick={handleBackButton}>
+         <b>Back</b> 
         </button>
       </div>
 
@@ -97,8 +97,8 @@ export default function FacultyLogin() {
         )}
 
         <div className="text-center">
-          <button type="submit" className="btn btn-primary">
-            Login
+          <button type="submit" className="btn btn-primary btn-lg btn-success">
+            <b>Login</b>
           </button>
         </div>
       </form>
