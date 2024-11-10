@@ -57,15 +57,15 @@ export default function StudentLogin() {
       <h1 id="studentlogin" className="text-center">Student Login</h1>
 
       <div className="d-flex justify-content-end">
-        <button className="btn btn-dark ms-auto" onClick={handleBackButton}>
-          Back
+        <button className="btn btn-danger btn-lg ms-auto" onClick={handleBackButton}>
+          <b>Back</b>
         </button>
       </div>
 
       <form onSubmit={handleLogin} className="mt-4">
-        <div id="studentlogin_username" className="mb-3">
-          <label htmlFor="username" className="form-label">
-            Username
+        <div  className="mb-3">
+          <label htmlFor="username" className="form-label fs-4">
+           <b> Username</b>
           </label>
           <input
             type="text text-black"
@@ -77,9 +77,9 @@ export default function StudentLogin() {
           />
         </div>
 
-        <div id="studentlogin_password" className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
+        <div  className="mb-3">
+          <label htmlFor="password" className="form-label fs-4">
+            <b>Password</b>
           </label>
           <input
             type="password"
@@ -98,7 +98,7 @@ export default function StudentLogin() {
         )}
 
         <div  className="text-center">
-          <button id="login_button"type="submit" className="btn btn-primary">
+          <button  type="submit" className="btn btn-primary btn-lg">
             <b>Login </b>
           </button>
         </div>

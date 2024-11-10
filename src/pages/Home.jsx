@@ -32,11 +32,13 @@ const Home = () => {
   return (
     <div className="container text-center mt-5">
       <h1 id="welcm" className="text-white text-shadow">{message}</h1>
+      
+
       <div className="mt-4">
-        <button id="facult" className="btn btn-warning m-2" onClick={handleFacultyLogin}>
+        <button  className="btn btn-warning m-2 btn-lg fw-bold" onClick={handleFacultyLogin}>
           Faculty Login
         </button>
-        <button id="stdnt" className="btn btn-success m-2" onClick={handleStudentLogin}>
+        <button  className="btn btn-success m-2 btn-lg fw-bold" onClick={handleStudentLogin}>
           Student Login
         </button>
       </div>
